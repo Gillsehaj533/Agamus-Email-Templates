@@ -1,162 +1,511 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AGAMUS AI & AUTOMATION Product Showcase</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Reset some defaults for email clients */
-    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-    table { border-collapse: collapse !important; }
-    body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #f4f4f4; }
-    /* Container */
-    .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; }
-    /* Header */
-    .header { padding: 20px; text-align: center; background-color: #000000; color: #ffffff; }
-    .header img { max-width: 150px; height: auto; display: block; margin: 0 auto 10px; }
-    .header h1 { font-family: Arial, sans-serif; font-size: 24px; margin: 0; }
-    /* Hero */
-    .hero { padding: 0; }
-    .hero img { width: 100%; height: auto; display: block; }
-    /* Gallery */
-    .gallery { width: 100%; }
-    .gallery td { padding: 5px; }
-    .gallery img { width: 100%; height: auto; display: block; border-radius: 4px; }
-    /* Footer */
-    .footer { padding: 20px; text-align: center; font-family: Arial, sans-serif; font-size: 12px; color: #777777; }
-    .social-icons img { width: 24px; margin: 0 5px; vertical-align: middle; }
-    /* Responsive */
-    @media screen and (max-width: 480px) {
-      .gallery td { display: block; width: 100% !important; }
+  <title>AGAMUS AI & AUTOMATION LTD. - Industrial Automation Solutions</title>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style type="text/css">
+    /* Reset styles */
+    body, table, td, p, a, li, blockquote {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    
+    /* Main styles */
+    body {
+      background-color: #0a0a0a !important;
+      margin: 0 !important;
+      padding: 20px !important;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+    }
+    
+    .email-wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #1a1d23;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+    
+    .header {
+      background: linear-gradient(220deg, #000000 0%, #1a1d23 100%);
+      padding: 40px 30px 30px;
+      text-align: center;
+      border-bottom: 2px solid #2a2d33;
+    }
+    
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+    
+    .company-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 12px 0 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    .tagline {
+      font-size: 14px;
+      color: #b0b8c4;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    
+    .personal-section {
+      padding: 30px 30px 25px;
+      background-color: #1a1d23;
+      border-bottom: 1px solid #2a2d33;
+    }
+    
+    .personal-greeting {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e1e5ea;
+      margin: 0 0 18px 0;
+    }
+    
+    .personal-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #d1d5da;
+      margin: 0;
+    }
+    
+    .intro-section {
+      padding: 30px 30px 25px;
+      text-align: center;
+      background-color: #1a1d23;
+    }
+    
+    .intro-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e1e5ea;
+      margin: 0;
+    }
+    
+    .products-section {
+      padding: 25px 20px;
+      background-color: #1a1d23;
+    }
+    
+    .products-grid {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0 auto;
+      max-width: 560px;
+    }
+    
+    .products-grid td {
+      width: 50%;
+      padding: 12px;
+      vertical-align: top;
+    }
+    
+    .product-card {
+  background-color: #242832;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  /* Remove padding here to ensure image fills card */
+  padding: 0;
+}
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 102, 238, 0.2);
+    }
+    
+   .product-image {
+  width: 100%;
+  height: 270px; /* Increase for more vertical images */
+  object-fit: cover; /* Fills area, may crop slightly but looks bold/pro */
+  object-position: center;
+  display: block;
+  border-radius: 16px 16px 0 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.product-image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 45px;
+  background: linear-gradient(180deg, rgba(10,15,30,0.43) 0%, rgba(24,28,37,0) 100%);
+  border-radius: 16px 16px 0 0;
+  pointer-events: none;
+  z-index: 2;
+}
+    
+    .product-title {
+      padding: 18px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: 0.8px;
+      line-height: 1.4;
+      margin: 0;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #242832;
+      border-radius: 0 0 16px 16px;
+    }
+    
+    .cta-section {
+      padding: 40px 30px;
+      text-align: center;
+      background-color: #1a1d23;
+    }
+    
+    .cta-text {
+      font-size: 18px;
+      color: #e1e5ea;
+      margin: 0 0 25px 0;
+      line-height: 1.5;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #0066ee 0%, #004bb5 100%);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(0, 102, 238, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 102, 238, 0.5);
+    }
+    
+    .footer {
+      background-color: #0f1115;
+      padding: 30px 30px 25px;
+      text-align: center;
+      border-top: 1px solid #2a2d33;
+    }
+    
+    .social-text {
+      color: #b0b8c4;
+      margin: 0 0 18px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    .social-icons {
+      margin: 20px 0 25px;
+    }
+    
+    .social-icon {
+      display: inline-block;
+      margin: 0 12px;
+      color: #b0b8c4;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      color: #0066ee;
+      transform: translateY(-2px);
+    }
+    
+    .footer-text {
+      font-size: 14px;
+      color: #8a9199;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .footer-link {
+      color: #b2d4ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: #0066ee;
+    }
+    
+    /* Mobile responsive */
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 10px !important;
+      }
+      
+      .email-wrapper {
+        border-radius: 12px !important;
+      }
+      
+      .header {
+        padding: 30px 20px 25px !important;
+      }
+      
+      .company-name {
+        font-size: 24px !important;
+        letter-spacing: 1.5px !important;
+      }
+      
+      .tagline {
+        font-size: 13px !important;
+      }
+      
+      .personal-section {
+        padding: 25px 20px 20px !important;
+      }
+      
+      .personal-greeting {
+        font-size: 16px !important;
+      }
+      
+      .personal-text {
+        font-size: 15px !important;
+      }
+      
+      .intro-section {
+        padding: 25px 20px 20px !important;
+      }
+      
+      .intro-text {
+        font-size: 16px !important;
+      }
+      
+      .products-section {
+        padding: 20px 15px !important;
+      }
+      
+      .products-grid td {
+        padding: 8px !important;
+      }
+      
+      .product-image {
+        height: 160px !important;
+        padding: 0 !important;
+      }
+      
+      .product-title {
+        font-size: 13px !important;
+        padding: 15px 12px !important;
+        min-height: 45px !important;
+      }
+      
+      .cta-section {
+        padding: 30px 20px !important;
+      }
+      
+      .cta-text {
+        font-size: 16px !important;
+      }
+      
+      .cta-button {
+        padding: 16px 32px !important;
+        font-size: 15px !important;
+      }
+      
+      .footer {
+        padding: 25px 20px 20px !important;
+      }
+      
+      .social-icon {
+        font-size: 22px !important;
+        margin: 0 10px !important;
+      }
+    }
+    
+    /* Extra small devices */
+    @media only screen and (max-width: 480px) {
+      .logo {
+        max-width: 120px !important;
+      }
+      
+      .company-name {
+        font-size: 22px !important;
+      }
+      
+      .product-image {
+        height: 140px !important;
+      }
     }
   </style>
 </head>
 <body>
-
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center">
-        <table role="presentation" class="email-container" cellpadding="0" cellspacing="0">
-
-          <!-- Header -->
-          <tr>
-            <td class="header">
-              <!-- Logo -->
-              <img src="https://raw.githubusercontent.com/your‑repo/logo.png" alt="AGAMUS AI & AUTOMATION">
-              <!-- Title -->
-              <h1>AGAMUS AI &amp; AUTOMATION</h1>
-            </td>
-          </tr>
-
-          <!-- Hero / Intro -->
-          <tr>
-            <td class="hero">
-              <img src="https://raw.githubusercontent.com/your‑repo/WELDED_STEEL_CHAIN.png" alt="Welded Steel Drag Chains">
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 20px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color:#333333;">
-              <p>Hello,</p>
-              <p>Discover our ANSI‑compliant industrial automation components. Click on any image below to download the full PDF brochure for that product line.</p>
-            </td>
-          </tr>
-
-          <!-- Gallery of 10 images (grouped into 4 PDFs: 3+3+2+2) -->
-          <tr>
-            <td>
-              <table role="presentation" class="gallery" width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <!-- PDF #1 (3 images) -->
-                  <td width="33.3%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide1.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/WELDED_STEEL_CHAIN.png" alt="Welded Steel Drag Chains">
-                    </a>
-                  </td>
-                  <td width="33.3%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide1.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/SLIDE_GATES.png" alt="Slide Gates">
-                    </a>
-                  </td>
-                  <td width="33.3%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide1.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/SCREW_CONVEYOR_ADV.png" alt="Screw Conveyor & Accessories">
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <!-- PDF #2 (3 images) -->
-                  <td width="33.3%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide2.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/MINING_CHAIN.png" alt="Mining Chains">
-                    </a>
-                  </td>
-                  <td width="33.3%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide2.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/LUMBER_AND_TIMBER.png" alt="Lumber & Timber Chains">
-                    </a>
-                  </td>
-                  <td width="33.3%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide2.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/GEAR_ADV.png" alt="Standard & Customized Gears">
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <!-- PDF #3 (2 images) -->
-                  <td width="50%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide3.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/FORGED_&_RIVETLESS.png" alt="Forged & Rivetless Chains">
-                    </a>
-                  </td>
-                  <td width="50%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide3.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/BUCKET_ELEVATOR_CHAIN.png" alt="Bucket & Elevator Chains">
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <!-- PDF #4 (2 images) -->
-                  <td width="50%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide4.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/ASPHALT_AND_CEMENT.png" alt="Asphalt & Cement Chains">
-                    </a>
-                  </td>
-                  <td width="50%">
-                    <a href="https://raw.githubusercontent.com/your‑repo/pdfs/chain‑guide4.pdf">
-                      <img src="https://raw.githubusercontent.com/your‑repo/1LUMBER_AND_TIMBER.png" alt="Lumber & Timber Chains (Variant)">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Call to Action -->
-          <tr>
-            <td style="padding:20px; text-align:center;">
-              <a href="mailto:sales@agamus.ca" style="background-color:#000000;color:#ffffff;padding:12px 24px;text-decoration:none;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;">Request a Quote</a>
-            </td>
-          </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td class="footer">
-              <p>Follow us on:</p>
-              <p class="social-icons">
-                <a href="https://x.com/Agamusaiauto"><img src="https://raw.githubusercontent.com/your‑repo/icons/twitter.png" alt="X"></a>
-                <a href="https://www.linkedin.com/company/agamus-ai-automation"><img src="https://raw.githubusercontent.com/your‑repo/icons/linkedin.png" alt="LinkedIn"></a>
-                <a href="https://www.facebook.com/share/1AJASzhZK3/?mibextid=wwXIfr"><img src="https://raw.githubusercontent.com/your‑repo/icons/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/agamusai?igsh=MWh1cm5vb2Z0aXE5ZA=="><img src="https://raw.githubusercontent.com/your‑repo/icons/instagram.png" alt="Instagram"></a>
-              </p>
-              <p>&copy; 2025 AGAMUS AI &amp; AUTOMATION. All rights reserved.</p>
-              <p><a href="https://www.agamus.ca" style="color:#777777;text-decoration:none;">www.agamus.ca</a> | <a href="mailto:sales@agamus.ca" style="color:#777777;text-decoration:none;">sales@agamus.ca</a></p>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-  </table>
-
+  <div class="email-wrapper">
+    <!-- Header -->
+    <div class="header">
+      <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/Agamus-Logo.png" alt="AGAMUS Logo" class="logo">
+      <h1 class="company-name">AGAMUS AI & AUTOMATION LTD.</h1>
+      <p class="tagline">Premium ANSI-Compliant Industrial Solutions</p>
+    </div>
+    
+    <!-- Personal Section -->
+    <div class="personal-section">
+      <p class="personal-greeting">Dear [First Name],</p>
+      <p class="personal-text">
+        I hope this message finds you well. As someone involved in industrial operations, I thought you'd be interested in learning about our specialized automation components that help companies like yours improve efficiency and reduce operational costs. We've been providing reliable, ANSI-compliant solutions to industrial facilities across North America, and I believe our products could bring significant value to your operations.
+      </p>
+    </div>
+    
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <p class="intro-text">
+        Discover our cutting-edge industrial automation components.<br>
+        Click on any product below to download detailed technical brochures.
+      </p>
+    </div>
+    
+    <!-- Products Section -->
+    <div class="products-section">
+      <table class="products-grid">
+        <tr>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/WELDED%20STEEL%20CHAIN.png" alt="Welded Steel Chain" class="product-image">
+              <div class="product-title">Welded Steel Chains</div>
+            </a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/SLIDE%20GATES.png" alt="Slide Gates" class="product-image">
+              <div class="product-title">Slide Gates</div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-SCREW-CONVEYOR.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/SCREW%20CONVEYOR%20ADV.png" alt="Screw Conveyor" class="product-image">
+              <div class="product-title">Screw Conveyor & Accessories</div>
+            </a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/MINING%20CHAIN.png" alt="Mining Chains" class="product-image">
+              <div class="product-title">Mining Chains</div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/LUMBER%20AND%20TIMBER.png" alt="Lumber & Timber Chain" class="product-image">
+              <div class="product-title">Lumber & Timber Chain</div>
+            </a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus_Gear-Shaft.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/GEAR%20ADV.png" alt="Standard & Customized Gears" class="product-image">
+              <div class="product-title">Standard & Custom Gears</div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/FORGED%20%26%20REITLESS.png" alt="Forged & Rivetless Chains" class="product-image">
+              <div class="product-title">Forged & Rivetless Chains</div>
+            </a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/BUCKET%20ELEVEATOR%20CHAIN.png" alt="Bucket & Elevator Chain" class="product-image">
+              <div class="product-title">Bucket & Elevator Chains</div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/ASPHALT%20AND%20%20CEMENT.png" alt="Asphalt & Cement Chains" class="product-image">
+              <div class="product-title">Asphalt & Cement Chains</div>
+            </a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/pdfs/Agamus-Chains_merged.pdf" class="product-card">
+              <img src="https://raw.githubusercontent.com/Gillsehaj533/Agamus-Email-Templates/main/images/1LUMBER%20AND%20TIMBER.png" alt="Lumber & Timber Chain Variant" class="product-image">
+              <div class="product-title">Lumber & Timber Chain (Variant)</div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <p class="cta-text">Ready to discuss how these solutions can benefit your operations?</p>
+      <a href="mailto:sales@agamus.ca" class="cta-button">Request Quote →</a>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p class="social-text">Connect with us:</p>
+      <div class="social-icons">
+        <a href="https://x.com/Agamusaiauto" class="social-icon" title="X / Twitter">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/agamus-ai-automation" class="social-icon" title="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1AJASzhZK3/?mibextid=wwXIfr" class="social-icon" title="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/agamusai?igsh=MWh1cm5vb2Z0aXE5ZA==" class="social-icon" title="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+      </div>
+      <div class="footer-text">
+        © 2025 AGAMUS AI & AUTOMATION<br>
+        <a href="https://www.agamus.ca" class="footer-link">www.agamus.ca</a> | 
+        <a href="mailto:sales@agamus.ca" class="footer-link">sales@agamus.ca</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+  
